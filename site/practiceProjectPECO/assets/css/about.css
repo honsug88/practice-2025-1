@@ -1,0 +1,121 @@
+/* about.css — стили для страницы “О проекте” */
+
+html {
+  /* Плавный скролл и растянутый фон на весь экран */
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #191818 0%, #44342F 100%) no-repeat center center fixed;
+  background-size: cover;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: transparent;
+  color: #FBFAF9;
+  font-family: 'Montserrat', sans-serif;
+  padding-bottom: 60px; /* учёт футера */
+  margin: 0;
+}
+
+header,
+footer {
+  background-color: #1C1613;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-logo {
+  font-family: 'Georgia', serif;
+  font-size: 1.8rem;
+  color: #D1510A;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu li a {
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: #FBFAF9;
+  text-decoration: none;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.nav-menu li a.active::after,
+.nav-menu li a:hover {
+  background-color: #302623;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #FBFAF9;
+}
+
+/* Основной контейнер */
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  flex: 1;
+  padding: 60px 0;
+}
+
+/* Секция “О проекте” */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+section.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-content {
+  background: #FBFAF9;
+  color: #191818;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  margin-bottom: 40px;
+  transition: transform 0.3s;
+}
+
+.section-content:hover {
+  transform: translateY(-5px);
+}
+
+/* Заголовки */
+h1, h2 {
+  font-family: 'Georgia', serif;
+  color: #D1510A;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+h1::after,
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 60px;
+  height: 4px;
+  background: #F55D04;
+}
+
+/* Список задач */
+ol {
+  margin-top: 20px;
+  padding-left: 20px;
+  color: #191818;
+}
+
+
